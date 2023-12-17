@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Reservas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Listagem de Reservas</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Cliente</th>
+                        <th scope="col">Destino</th>
+                        <th scope="col">Data de Início</th>
+                        <th scope="col">Data de Término</th>                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="reserva : ${reservas}">
+                        <td th:text="${reserva.idReserva}"></td>
+                        <td th:text="${reserva.nomeCliente.nomeCliente}"></td>
+                        <td th:text="${reserva.nomeDestino.nomeDestino}"></td>
+						<td th:text="${#temporals.format(reserva.inicioDtReserva, 'dd/MM/yyyy')}"></td>
+						<td th:text="${#temporals.format(reserva.finalDtReserva, 'dd/MM/yyyy')}"></td>
+                        <td>
+							<a th:href="@{/{id}/editarDestino (id=${destino.idDestino})}" class="btn btn-warning">Editar</a>  
+		                     
+                        </td>
+                    </tr>
+                </tbody>
+                	<div th:if="${successMessage}" class="alert alert-success" role="alert" th:text="${successMessage}"></div>
+
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <a th:href="@{'/cadastrarReservas'}" class="btn btn-primary">Cadastrar Reserva</a>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
