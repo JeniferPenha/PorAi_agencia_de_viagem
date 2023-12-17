@@ -1,0 +1,283 @@
+
+.cabecalho{  
+      
+    overflow: hidden;
+}
+
+.data_viagem{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding: 10px;  
+    margin: 0%;
+    background-color: #296394;  
+    width: 100%;
+    color: #EEEFEF;
+ 
+}
+.data{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_bagagem{
+    background-color: #296394; color: white;
+    
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-top: 10px;
+}
+.bagagem{
+    display: flex;
+    justify-content: center;
+	padding: 30px;
+    background-color: #EEEFEF;    
+}
+.fotos {
+	text-align: center;
+    width: 100%;
+	align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #c2dddd;    
+}
+.fotos img{
+    margin: 1%;
+    width: 30%;
+}
+
+.itens{      
+    align-items: center; 
+    background-color: #EEEFEF;    
+    border: none;       
+    display: inline-block;
+}
+
+  /*promoção*/
+  .promocoes{
+    background-color: #6A52D0;
+    grid-column: 1/4;
+    width: 100%;    
+    overflow: hidden;
+    text-align: center;
+    
+}
+
+.itens_pomocao{      
+    align-items: center; 
+    background-color: #EEEFEF;    
+    border: none;   
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.card-img-top{
+    width: 100%;
+    height: 30%;
+   
+}
+.paragrafo{
+    margin-left: 10px;
+    font-size: 90%;
+}
+
+/*Destinos*/
+
+.destinos{
+    background: linear-gradient(#f7fbfe, #2D90EB);
+    grid-column: 1/4;
+    width: 100%;    
+    overflow: hidden;
+    text-align: center;
+    
+}
+.titulo{
+    color: #F57629;
+    font-weight: bolder;
+    opacity: 0.7;
+}
+.viagens{
+    width: 14rem;
+    height: 80%;
+}
+
+.destinos .preco{
+    color: orange;
+    font-weight: bolder;
+    text-shadow: 0 0 0.2em white;  
+}
+.itens_destinos{      
+    align-items: center; 
+    background-color: #EEEFEF;    
+    border: none;   
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.card-img-top{
+    width: 100%;
+   
+}
+.paragrafo{
+    margin-left: 10px;
+    font-size: 90%;
+}
+
+/*Contato*/
+
+.container_contato{
+    display: grid;
+    grid-template-columns: 1fr 1fr;  
+    background-color: #EEEFEF;    
+}
+
+#contatos{
+  grid-column: 1/2;
+    padding: 20px;
+}
+form{
+    margin: 40px 0;
+}
+form label, form legend{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.input-padrao{
+    display: block;
+    margin-bottom: 20px;
+    width: 80%;
+    padding: 10px 25px;
+}
+.checkbox{
+  margin: 20px 0; 
+}
+.enviar{
+    width: 30%;
+    padding: 15px 0;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    transition: 1s all;
+    cursor: pointer;
+}
+.enviar:hover{
+    background: darkorange;
+    transform: scale(1.1);
+}
+table{
+    margin: 20px 0 40px;
+    width: 100%;
+} 
+thead{
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+td , th{
+    border: 1px solid #000000;
+    padding: 8px 15px;    
+}
+
+.img_contato{
+  grid-column: 2/3;
+  width: 100%;
+}
+
+/*Login Cadastro*/
+
+.login_cadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.login_formulario{
+    display: flex;
+    align-items: center;
+}
+.cadastro{
+    padding: 60px; 
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+/*Footer*/
+
+.rodape{
+    background-color: #296394;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding-top: 10px;
+}
+    
+    .rodape img{
+        cursor: pointer;
+    }
+  
+
+
+      @media (max-width:600px){
+
+        
+        .jumbotron{
+            height: 100%;
+            
+        }
+        .fotos{
+            grid-template-rows: 100vh;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+       
+        .fotos h2{
+            width: 100%;
+            text-align: center;
+        }
+        .fotos img{
+       
+            width: 45%;
+        }
+       
+        .rodape{
+            height: 100px;
+        }
+        .viagens{
+            width: 18rem;
+        }
+        .titulo{
+            font-size: 20px;
+        }
+        .img_contato{
+            display: none;
+        }
+        #contatos{
+            grid-column: 1/3;
+              padding: 20px;
+          }
+       .container{
+        grid-template-rows: 35vh 70vh;
+       }
+       .bagagem{
+        display: inline-block;
+       
+       }
+       .cadastro{
+        margin-bottom: 20px;
+        padding: 30px; 
+        margin-top: 20px;       
+       }
+       .data img{
+        display: none;
+       }
+       .data_viagem{
+        width: 100%;
+       }
+    }

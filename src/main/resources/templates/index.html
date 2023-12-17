@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/style.css"> 
+<title>Cadastrar</title>
+</head>
+<body>
+    
+<main class="container_fluid">
+  <div class="cabecalho" style="background-color: #2196F3">
+
+<!--Inicio navBar-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #296394;">
+  <a class="navbar-brand text-light" href="/">PorAí</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link text-light"  href="/">Home <span class="sr-only"></span></a>
+      <a class="nav-item nav-link text-light" href="destino.html">Destino</a>
+      <a class="nav-item nav-link text-light" href="promocoes.html">Promoções</a>
+      <a class="nav-item nav-link text-light" href="contato.html">Contato</a>   
+    </div>   
+  </div>
+   <!--Botão d login e cadastro-->
+      <div style="margin-right: 10px;">
+        <a class="btn bg-danger text-light" type="button" href="logim.html">Login</a>
+        <a class="btn text-light bg-danger" type="button" href="cadastro.html">Cadastrar</a>
+        <a class="btn text-light bg-warning " type="button" href="homeAdm.html"><img src="img/icons8-trancar-24.png"/> Adm</a>
+      </div>
+</nav>
+<br>
+<br>
+<!--Fim NavBar-->     
+</div>
+<!--Jumbotron-->
+<div class="card mb-3" style="width: 100%;">
+  <div class="jumbotron jumbotron-fluid" style="background-image: url(img/topo.jpg);background-size: 1200px 400px;background-position: center;margin: 0%;">
+    
+      <h1 class="display-4 text-light"style="padding: 10px; font-weight: 500;  margin-left: 40px;">Olá Viajante</h1>
+      <p class="lead text-light"style="padding: 10px; font-weight: 500; margin-left: 40px;">Seja bem vinto ao seu site de viagem.</p>
+  </div> 
+</div>
+<!--Jumbotron-->
+
+<!--Inicio formulário com datas de viagem mais destino-->
+
+  <form action="" method="post" class="data_viagem" >
+   
+    <label style="margin-bottom: 5px;">Data inicio: </label> 
+      <input name="dataInicio" type="date">
+    <label>Data final: </label>
+      <input name="dataFinal" type="date">
+      <label for="">Destino: </label>
+<select name="destino"aria-label="Default select example">
+  <option value="Inativo" selected>-- Destino</option>
+  <option value="Ativo">Jericoacoara</option>
+  <option value="Inativo">Feira de Santana</option>
+  <option value="Ativo">Foz do Iguacu</option>
+  <option value="Inativo">Curitiba</option>
+  <option value="Ativo">Elevador Lacerda</option>
+  <option value="Inativo">Bonito</option>
+</select>
+<br>
+<button class="btn btn-primary" type="button">Comprar</button>
+</form>
+<!--Fim Formulário data-->
+
+
+<!--Informações de bagagens e viagens-->
+  <section  class="bagagem">
+
+    
+    <div class="card itens_destinos text-center viagens" style="margin: 1%;">
+      <img src="img/bagagem.jpeg" alt="Imagem de capa do card" style="width: 100%; height: 40%;">
+      <div class="card-body">
+        <h5 class="card-title">Bagagem</h5>
+        <hr size="20px">
+        <p class="card-text">Tipo de bagagem para levar na sua viagem. <br> dicas de como arrumar <br>e informações de peso.</p>
+        <a href="https://www.blogapaixonadosporviagens.com.br/" class="btn btn_bagagem text-light">Saiba mais</a>
+      </div>
+    </div>
+
+    <div class="card itens_destinos text-center viagens"style="margin: 1%;">
+      <img src="img/passaporte.jpeg" alt="Imagem de capa do card" style="width: 100%; height: 40%;">
+      <div class="card-body">
+        <h5 class="card-title">passaporte</h5>
+        <hr size="20px">
+        <p class="card-text">Tudo relacionado <br>sobre passagens. <br>De pacotes de viagens <br>e ajuda de trajetos.</p>
+        <a href="https://beeducation.tur.br/blog/" class="btn  btn_bagagem text-light">Saiba mais</a>
+      </div>
+    </div>
+  
+    <div class="card itens_destinos text-center viagens"style="margin: 1%;">
+      <img src="img/destinos.jpeg" alt="Imagem de capa do card" style="width: 100%; height: 40%;">
+      <div class="card-body">
+        <h5 class="card-title">Destinos</h5>
+        <hr size="20px">
+        <p class="card-text">20 melhores lugares <br>para viajar no Brasil.<br>Podemos ajudar, vem com a gente.</p>
+        <a href="https://www.viagenscinematograficas.com.br/2022/01/melhores-lugares-para-viajar-brasil.html" class="btn  btn_bagagem text-light" >Saiba mais</a>
+      </div>
+    </div>
+  </section>  
+    <!--Fim dicas de viagem e bagagem-->  
+
+    <section class="fotos">
+      <h2>Galeria de Fotos</h2>
+      <img src="img/ceu.jpg" alt="ceu">
+      <img src="img/grama.jpg" alt="grama">
+      <img src="img/montanha.jpg" alt="montanha">
+      <img src="img/mar.jpg" alt="mar">
+      <img src="img/arvores.jpg" alt="arvores">
+      <img src="img/ponte.jpg" alt="ponte">
+      
+    </section>
+    
+  <!--rodape-->    
+ 
+  <footer class="rodape">
+    <p>&copy; copyright Jenifer Penha - 2023</p>
+      <DIV>
+      <img src="img/icons8-whatsapp-48 (1).png" alt="whatsApp">
+      <img src="img/icons8-instagram-48 (1).png" alt="Instagram">
+      <img src="img/icons8-facebook-novo-48.png" alt="facebook">
+      </DIV>
+  </footer>
+</main>  
+
+</body>
+</html>
