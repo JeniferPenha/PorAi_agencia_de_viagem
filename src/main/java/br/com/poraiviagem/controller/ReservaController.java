@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,13 +28,12 @@ public class ReservaController {
 	 @Autowired
 	 	private DestinoService destinoService;
 	 
-	 	//para acessar "http://localhost:8080/reservas/reserva/cadastrarReserva"
 	    @GetMapping("/cadastrarReservas")
 	    public ModelAndView cadastrarReserva(Model model) {
 	        ModelAndView modelAndView = new ModelAndView("cadastrarReserva");
 
 	        model.addAttribute("reserva", new ReservaModel());
-	        model.addAttribute("listaDeClientes", clienteService.listarNomesClientes());
+	        model.addAttribute("listaDeClientes", clienteService.listarClientes());
 	        model.addAttribute("listaDeDestinos", destinoService.listarDestinos());       
 	        
 
@@ -44,7 +44,7 @@ public class ReservaController {
 	    public ModelAndView cadastrarReserva(@ModelAttribute("reserva") ReservaModel reserva, RedirectAttributes redirectAttributes) {
 	        ModelAndView modelAndView = new ModelAndView("redirect:listarReservas");
 
-	        try {
+	        try {  
 	            reservaService.salvarReserva(reserva);
 	            redirectAttributes.addFlashAttribute("successMessage", "Reserva cadastrada com sucesso!");
 	        } catch (Exception e) {
@@ -64,8 +64,47 @@ public class ReservaController {
 		    }
 		
 
-	
-	
+	        @GetMapping("/editarReserva/{id}")
+	        public ModelAndView editarReserva(@PathVariable Long id, Model model) {
+	            ModelAndView modelAndView = new ModelAndView("editarReserva");
+
+	            ReservaModel reserva = reservaService.obterReservaPorId(id);
+	            model.addAttribute("reserva", reserva);
+	            model.addAttribute("listaDeClientes", clienteService.listarClientes());
+	            model.addAttribute("listaDeDestinos", destinoService.listarDestinos());
+
+	            return modelAndView;
+	        }   
+
+	        @PostMapping("/editarReserva")
+	        public ModelAndView salvarEdicaoReserva(@ModelAttribute("reserva") ReservaModel reserva,
+	                RedirectAttributes redirectAttributes) {
+	            ModelAndView modelAndView = new ModelAndView("redirect:listarReservas");
+
+	            try {
+	                reservaService.salvarReserva(reserva);
+	                redirectAttributes.addFlashAttribute("successMessage", "Reserva editada com sucesso!");
+	            } catch (Exception e) {
+	                redirectAttributes.addFlashAttribute("errorMessage", "Erro ao editar a reserva.");
+	            }
+
+	            return modelAndView;
+	        }
+
+	        @GetMapping("/excluirReserva/{id}")
+	        public ModelAndView excluirReserva(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+	            ModelAndView modelAndView = new ModelAndView("redirect:/listarReservas");
+
+	            try {
+	                reservaService.excluirReserva(id);
+	                redirectAttributes.addFlashAttribute("successMessage", "Reserva excluída com sucesso!");
+	            } catch (Exception e) {
+	                redirectAttributes.addFlashAttribute("errorMessage", "Erro ao excluir a reserva.");
+	            }
+
+	            return modelAndView;
+	        }
+	       
 	
 
 }

@@ -34,8 +34,12 @@
 						<td th:text="${#temporals.format(reserva.inicioDtReserva, 'dd/MM/yyyy')}"></td>
 						<td th:text="${#temporals.format(reserva.finalDtReserva, 'dd/MM/yyyy')}"></td>
                         <td>
-							<a th:href="@{/{id}/editarDestino (id=${destino.idDestino})}" class="btn btn-warning">Editar</a>  
-		                     
+														
+							<a th:href="@{/editarReserva/{id} (id=${reserva.idReserva})}" class="btn btn-warning">Editar</a>
+							<a th:href="@{/excluirReserva/{id} (id=${reserva.idReserva})}"
+						   	onclick="return confirm('Tem certeza que deseja excluir a reserva?');" 
+						   	class="btn btn-danger">Excluir</a>
+							                     
                         </td>
                     </tr>
                 </tbody>
@@ -47,8 +51,7 @@
 
     <div class="row">
         <div class="col-sm-12">
-            <a th:href="@{'/cadastrarReservas'}" class="btn btn-primary">Cadastrar Reserva</a>
-        </div>
+            <a th:href="@{'/cadastrarReservas'}" class="btn btn-primary">Cadastrar Reserva</a>          
     </div>
 </div>
 

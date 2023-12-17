@@ -9,8 +9,7 @@ public interface DestinoService {
 	    List<DestinoModel> listarDestinos();
 	    DestinoModel obterDestinoPOrID(long id);
 	    void deleteDestino(long id);
-	    List<String> listarNomesDestinos();
-	    
+	   	    
 	}
 
 

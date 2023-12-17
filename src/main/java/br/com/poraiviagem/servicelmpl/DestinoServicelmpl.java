@@ -1,7 +1,6 @@
 package br.com.poraiviagem.servicelmpl;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,13 +36,7 @@ public class DestinoServicelmpl implements DestinoService {
 	        destinoRepository.deleteById(id);
 	    }
 	    
-	    //Para mosntrar nomeDestino em listarReservas
-	    public List<String> listarNomesDestinos() {
-	        List<DestinoModel> destinos = destinoRepository.findAll(); 
-	        return destinos.stream()
-	                .map(DestinoModel::getNomeDestino)
-	                .collect(Collectors.toList());
-	    }
+	 
 	}
 
 	

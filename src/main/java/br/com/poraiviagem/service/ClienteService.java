@@ -9,6 +9,6 @@ public interface ClienteService {
     List<ClienteModel> listarClientes();
     ClienteModel obterClientePorID(long id);
     void deleteCliente(long id);
-    List<String> listarNomesClientes(); 
+
 	
 }

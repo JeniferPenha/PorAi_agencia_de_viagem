@@ -1,8 +1,6 @@
 package br.com.poraiviagem.servicelmpl;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,8 +19,8 @@ public class ReservaServicelmpl implements ReservaService{
 	        return reservaRepository.findAll();
 	    }
 	    @Override
-	    public Optional<ReservaModel> obterReservaPorId(long idReserva) {
-	        return reservaRepository.findById(idReserva);
+	    public ReservaModel obterReservaPorId(long id) {
+	        return reservaRepository.findById(id).orElse(null);
 	    }
 	    @Override
 	    public ReservaModel salvarReserva(ReservaModel reserva) {
