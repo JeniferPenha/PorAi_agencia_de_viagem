@@ -10,61 +10,67 @@
   </head>
   <body>
 	  
-      <!-- Cabeçalho -->
+	      <!-- inicio navbar -->
   <nav class="navbar navbar-expand-lg navbar-light text-light bg-dark ">
     <div class="container-fluid">
-      <a class="navbar-brand text-light" href="/">POrAí</a>
+      <a class="navbar-brand text-light"  href="homeAdm.html">POrAí</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="cadastrarCliente.html">Home</a>
+            <a class="nav-link active text-light" aria-current="page"  href="homeAdm.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active text-light" aria-current="page" href="listarCliente.html">Consultar cliente</a>
+            <a class="nav-link active text-light" aria-current="page" href="listarCliente">Cliente</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="listarDestinos.html">consultar Destinos</a>
+            <a class="nav-link text-light" href="listarDestinos">Destinos</a>
           </li>
 	      <li class="nav-item">
-	        <a class="nav-link active text-light" aria-current="page" href="listarReservas.html">Consultar reservas</a>
+	        <a class="nav-link active text-light" aria-current="page" href="listarReservas">Reservas</a>
 	      </li>
         </ul>
         <form  method="GET" class="d-flex">
           <input name="pesquisa" class="form-control me-2" type="search" placeholder="Digite o Nome ou CPF" aria-label="Search">
-          <button class="btn btn-outline-light bg-success" type="submit">Buscar</button>
+          <button class="btn btn-outline-light bg-success me-2" type="submit">Buscar</button>
+          <a class="btn btn-outline-light bg-danger " href='loginAdm.html'>Sair</a>
+
         </form>
       </div>
     </div>
   </nav>
   <br>
+  <!--Fim nav bar -->
 
       <!-- Corpo da Página -->
       <div class="container text-center mt-5">
           <div class="row">
               <div class="col-md-3">
-                  <div class="card">
+                  <div class="card g-0">
                       <div class="card-body">
-                          <h3>Cadastrar</h3>
-                          <p><a href="cadastrar.html">Cadastrar</a></p>
+                          <h3>Cliente</h3>
+                          <a href=cadastrarCliente>Cadastrar</a>
+                          <p><a href="listarCliente">Listar</a></p>
                       </div>
                   </div>
               </div>
               <div class="col-md-3">
                   <div class="card">
                       <div class="card-body">
-                          <h3>Listar</h3>
-                          <p><a href="lista.jsp">Listar</a></p>
+                          <h3>Destino</h3>
+                          <p><a href="cadastrarDestino">Cadastrar</a></p>
+                          <p><a href="listarDestinos">Listar</a></p>
                       </div>
                   </div>
               </div>
               <div class="col-md-3">
                   <div class="card">
                       <div class="card-body">
-                          <h3>atualizar</h3>
-                          <p><a href="formUpdate.jsp">atualizar</a></p>
+                          <h3>Reserva</h3>
+                          <p><a href="cadastrarReservas">Cadastrar</a></p>
+                          <p><a href="listarReservas">Listar</a></p>
                       </div>
                   </div>
               </div>
